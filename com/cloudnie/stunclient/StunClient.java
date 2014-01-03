@@ -1,4 +1,3 @@
-
 package com.cloudnie.stunclient;
 
 class StunClient {

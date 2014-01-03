@@ -1,3 +1,4 @@
+package com.cloudnie.stunclient;
 
 public interface StunConstant {
 	/* STUN Message type */
@@ -20,6 +21,9 @@ public interface StunConstant {
 	static final int STUN_ERROR_CODE                 = 0x0009;
 	static final int STUN_UNKNOWN_ATTRIBUTES         = 0x000A;
 	static final int STUN_REFLECTED_FROM             = 0x000B;
+	static final int STUN_REALM			 = 0x0014;
+	static final int STUN_NONCE			 = 0x0015;
+	static final int STUN_XOR_MAPPED_ADDRESS	 = 0x0020;
 
 	/* 400 (Bad Request): The request was malformed. 
 	 * The client should not retry the request without
