@@ -2,6 +2,16 @@ package com.cloudnie.stunclient;
 import java.lang.System;
 import java.net.InetAddress;
 
+/*                          Format of STUN Attributes
+ *   0                   1                   2                   3
+ *   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+ *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ *   |         Type                  |            Length             |
+ *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ *   |                         Value (variable)                ....
+ *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ */
+
 public class StunAttribute {
 	private int mType;	
 	private int mLength;
@@ -33,7 +43,6 @@ public class StunAttribute {
 		mValue[2] = (byte) (port >> 8);
 		mValue[3] = (byte) (port);
 		System.arraycopy(rawAddress, 0, mValue, 0, mLength);
-
 	}
 
 	public int getType() {
