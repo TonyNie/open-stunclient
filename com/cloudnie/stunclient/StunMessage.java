@@ -25,7 +25,7 @@ public class StunMessage {
 	private int mType = 0;
 	private int mLength = 0;
 	private int mAttriNum = 0;
-	private byte mTransID[] = new byte[16];
+	private byte mTransID[] = new byte[20];
 	private List<StunAttribute> mAttris = new ArrayList<StunAttribute>();
 	
 	public StunMessage(byte[] value) {
