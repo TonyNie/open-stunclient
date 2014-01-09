@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="StunClient" default="build" basedir=".">
+	<property name="src" value="src/com/cloudnie/stunclient"/>
+	<property name="dest" value="classes"/>
+	<property name="stunclient_jar" value="stunclient1.jar"/>
+	<target name="init">
+		<mkdir dir="${dest}"/>
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="${src}/" destdir="${dest}" includeAntRuntime="false"/>
+	</target>
+	<target name="build" depends="compile">
+		<jar jarfile="${stunclient_jar}" basedir="${dest}"/>
+	</target>
+	<target name="run" depends="build">
+		<java classname="com.cloudnie.stunclient.StunClient" classpath="${stunclient_jar}"/>
+	</target>
+	<target name="clean">
+		<delete dir="${dest}" />
+		<delete file="${stunclient_jar}" />
+	</target>
+</project>
